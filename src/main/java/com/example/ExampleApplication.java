@@ -23,9 +23,6 @@ public class ExampleApplication extends Application {
         Set<Class<?>> resources = new HashSet();
 
         resources.add(TestService.class);
-        //resources.add(SecondResource.class);
-        //...
-
         resources.add(io.swagger.jaxrs.listing.ApiListingResource.class);
         resources.add(io.swagger.jaxrs.listing.SwaggerSerializers.class);
 
