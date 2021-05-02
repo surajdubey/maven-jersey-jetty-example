@@ -2,7 +2,6 @@ package com.example;
 
 import io.swagger.jaxrs.config.BeanConfig;
 
-import javax.annotation.PostConstruct;
 import javax.ws.rs.core.Application;
 import java.util.HashSet;
 import java.util.Set;
