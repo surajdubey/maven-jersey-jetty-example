@@ -1,5 +1,24 @@
 <web-app>
     <display-name>Web</display-name>
+
+
+    <context-param>
+        <param-name>contextClass</param-name>
+        <param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
+    </context-param>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>com.example.config.ServiceConfig</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+    </listener>
+
+
     <servlet>
         <servlet-name>ExampleService</servlet-name>
         <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
@@ -11,6 +30,8 @@
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
+
+
 
     <servlet-mapping>
         <servlet-name>ExampleService</servlet-name>
