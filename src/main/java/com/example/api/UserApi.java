@@ -10,13 +10,13 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-@Path("/user")
+@Path("/")
 @Api(value = "User Api")
-@Consumes(MediaType.APPLICATION_JSON)
-@Produces(MediaType.APPLICATION_JSON)
+//@Consumes(MediaType.APPLICATION_JSON)
+//@Produces(MediaType.APPLICATION_JSON)
 public interface UserApi {
     @GET
-    @Path("/")
+    @Path("/user")
     @ApiOperation(value = "Get user details")
     @Produces(MediaType.APPLICATION_JSON)
     GetUserDetailsResponse getUser();

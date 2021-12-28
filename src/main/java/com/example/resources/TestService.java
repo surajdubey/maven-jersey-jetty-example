@@ -1,4 +1,4 @@
-package com.example;
+package com.example.resources;
 
 import com.example.api.UserApi;
 import com.example.model.GetUserDetailsResponse;

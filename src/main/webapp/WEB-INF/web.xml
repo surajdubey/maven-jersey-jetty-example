@@ -1,10 +1,14 @@
-<web-app>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         id="WebApp_ID" version="3.0">
     <display-name>Web</display-name>
 
 
     <context-param>
         <param-name>contextClass</param-name>
         <param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
+        <!--        <param-value>org.springframework.context.annotation.AnnotationConfigApplicationContext</param-value>-->
     </context-param>
     <context-param>
         <param-name>contextConfigLocation</param-name>
@@ -20,21 +24,18 @@
 
 
     <servlet>
-        <servlet-name>ExampleService</servlet-name>
+        <servlet-name>JerseyServlet</servlet-name>
         <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
         <init-param>
-<!--            <param-name>jersey.config.server.provider.packages</param-name>-->
-<!--            <param-value>com.example</param-value>-->
             <param-name>javax.ws.rs.Application</param-name>
-            <param-value>com.example.ExampleApplication</param-value>
+            <param-value>com.example.resources.ExampleApplication</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
 
 
-
     <servlet-mapping>
-        <servlet-name>ExampleService</servlet-name>
+        <servlet-name>JerseyServlet</servlet-name>
         <url-pattern>/api/*</url-pattern>
     </servlet-mapping>
 </web-app>
