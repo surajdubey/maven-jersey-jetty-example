@@ -1,7 +1,6 @@
 package com.example.api;
 
 import com.example.model.GetUniversityDetailResponse;
-import com.example.model.GetUserDetailsResponse;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
