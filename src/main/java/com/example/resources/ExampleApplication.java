@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 
 import javax.annotation.PostConstruct;
+import javax.ws.rs.Path;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -23,11 +24,12 @@ public class ExampleApplication extends ResourceConfig {
         System.out.println("Called on ExampleApplication PostConstruct");
         System.out.println("Applicationcontext is  " + context);
         System.out.println("ObjectMapper is " + objectMapper);
+
+        Set<Object> beanBag = new HashSet<>();
+        beanBag.addAll(context.getBeansWithAnnotation(Path.class).values());
+        beanBag.forEach(this::register);
+
         Set<Class<?>> resources = new HashSet<>();
-
-        resources.add(TestService.class);
-
-//        resources.add(UserApi.class);
         resources.add(io.swagger.jaxrs.listing.ApiListingResource.class);
         resources.add(io.swagger.jaxrs.listing.SwaggerSerializers.class);
 

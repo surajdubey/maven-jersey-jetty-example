@@ -13,7 +13,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 @Controller
-public class TestService implements UserApi {
+public class UserResource implements UserApi {
 
     public GetUserDetailsResponse getUser() {
         return new GetUserDetailsResponse(1, "Suraj");
