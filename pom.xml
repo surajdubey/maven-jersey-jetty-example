@@ -12,7 +12,7 @@
         <connection>scm:git:https://github.com/surajdubey/maven-jersey-jetty-example.git</connection>
         <developerConnection>scm:git:https://github.com/surajdubey/maven-jersey-jetty-example.git</developerConnection>
         <url>https://github.com/surajdubey/maven-jersey-jetty-example.git</url>
-        <tag>HEAD</tag>
+        <tag>HEAD1</tag>
     </scm>
 
     <build>
