@@ -70,6 +70,7 @@ hs_err_pid*
 # Maven
 log/
 target/
+release.properties
 
 SortationServices-war/.settings/*
 
