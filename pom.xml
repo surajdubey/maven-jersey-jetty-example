@@ -6,7 +6,7 @@
     <artifactId>maven-jersey-example</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <scm>
         <connection>scm:git:https://github.com/surajdubey/maven-jersey-jetty-example.git</connection>
@@ -38,7 +38,16 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>default-jar</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <version>2.6</version>
             </plugin>
 
             <plugin>
