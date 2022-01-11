@@ -11,5 +11,8 @@
         <module name="maven-jersey-example" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="maven-jersey-jetty-example" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
