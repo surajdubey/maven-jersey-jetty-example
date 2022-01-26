@@ -26,12 +26,32 @@ public class ExampleApplication extends ResourceConfig {
         System.out.println("ObjectMapper is " + objectMapper);
 
         Set<Object> beanBag = new HashSet<>();
-        beanBag.addAll(context.getBeansWithAnnotation(Path.class).values());
+
+        // remove all @Path annotations once from here, otherwise they conflict
+
+        /**
+         * context.getBeansWithAnnotation(Path.class) return Map<String, Object>
+         * context.getBeansWithAnnotation(Path.class).values() returns List<Object>
+         * This is why it is added here
+         *
+         * If we want to add resources directly, it needs to be added to HashSet
+         */
+//        beanBag.addAll(context.getBeansWithAnnotation(Path.class).values());
+
+        System.out.println(beanBag);
         beanBag.forEach(this::register);
 
         Set<Class<?>> resources = new HashSet<>();
         resources.add(io.swagger.jaxrs.listing.ApiListingResource.class);
         resources.add(io.swagger.jaxrs.listing.SwaggerSerializers.class);
+
+        /**
+         * Add Resource here if we want to add resource directly
+         */
+        resources.add(UserResource.class);
+        resources.add(UniversityResource.class);
+
+        System.out.println(resources);
 
         resources.forEach(this::register);
         System.out.println(context);
