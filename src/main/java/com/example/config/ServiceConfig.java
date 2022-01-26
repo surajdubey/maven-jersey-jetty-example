@@ -1,7 +1,9 @@
 package com.example.config;
 
+import com.example.api.UserApi;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.jaxrs.config.BeanConfig;
+import org.glassfish.jersey.client.proxy.WebResourceFactory;
 import org.springframework.context.annotation.*;
 
 import javax.annotation.PostConstruct;
@@ -35,5 +37,16 @@ public class ServiceConfig {
         beanConfig.setBasePath("/api");
         beanConfig.setResourcePackage("com.example");
         beanConfig.setScan(true);
+    }
+
+    @Bean
+    public UserApi userApi() {
+        ApacheRestClient restClient = new ApacheRestClient();
+
+        /**
+         * Each interface definition has URLs starting with '/' so URL ending with '/' is not needed here
+         */
+        UserApi userApi = WebResourceFactory.newResource(UserApi.class, restClient.getClient().target("http://localhost:3000/api"));
+        return userApi;
     }
 }
