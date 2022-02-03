@@ -1,5 +1,7 @@
 package com.example.config;
 
+import com.example.resources.ServerRequestLoggingFilter;
+import com.example.resources.ServerResponseLoggingFilter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.http.client.config.RequestConfig;
 import org.glassfish.jersey.jackson.JacksonFeature;
@@ -15,7 +17,9 @@ public class ApacheRestClient {
                 .build();
 
         ClientBuilder builder = ClientBuilder.newBuilder()
-                .register(JacksonFeature.class);
+                .register(JacksonFeature.class)
+                .register(ServerResponseLoggingFilter.class)
+                .register(ServerRequestLoggingFilter.class);
 
 //        return builder.build();
 
