@@ -5,7 +5,7 @@
     <groupId>org.example</groupId>
     <artifactId>maven-jersey-example</artifactId>
     <version>1.14-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
     <scm>
         <connection>scm:git:https://github.com/surajdubey/maven-jersey-jetty-example.git</connection>
