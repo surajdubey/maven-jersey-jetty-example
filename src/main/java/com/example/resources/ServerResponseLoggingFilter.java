@@ -31,6 +31,6 @@ public class ServerResponseLoggingFilter implements ContainerResponseFilter {
                 .append(containerResponseContext.getEntity());
         logger.error(b.toString());
         log.error(b.toString());
-//        System.out.println(b);
+        System.out.println(b);
     }
 }
