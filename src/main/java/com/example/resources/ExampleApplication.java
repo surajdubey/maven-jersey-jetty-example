@@ -51,6 +51,9 @@ public class ExampleApplication extends ResourceConfig {
         resources.add(UserResource.class);
         resources.add(UniversityResource.class);
 
+        resources.add(ServerRequestLoggingFilter.class);
+        resources.add(ServerResponseLoggingFilter.class);
+
         System.out.println(resources);
 
         resources.forEach(this::register);

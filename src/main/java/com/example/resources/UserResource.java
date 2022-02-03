@@ -8,6 +8,6 @@ import org.springframework.stereotype.Controller;
 public class UserResource implements UserApi {
 
     public GetUserDetailsResponse getUser() {
-        return new GetUserDetailsResponse(1, "Suraj");
+        return new GetUserDetailsResponse(1, "Suraj Dubey");
     }
 }
