@@ -23,7 +23,7 @@ public class ApacheRestClient {
 
 //        return builder.build();
 
-        return ClientBuilder.newClient();
+        return builder.build();
 
     }
 }
