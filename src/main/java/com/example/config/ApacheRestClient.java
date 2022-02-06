@@ -17,11 +17,9 @@ public class ApacheRestClient {
                 .build();
 
         ClientBuilder builder = ClientBuilder.newBuilder()
-                .register(JacksonFeature.class)
+//                .register(JacksonFeature.class)
                 .register(ServerResponseLoggingFilter.class)
                 .register(ServerRequestLoggingFilter.class);
-
-//        return builder.build();
 
         return builder.build();
 
